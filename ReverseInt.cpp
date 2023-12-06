@@ -9,28 +9,31 @@
 
 using namespace std; 
 
-class ReverseString {
+class ReverseInt {
     public: 
         int32_t reverseInt(int32_t  num){
-
-            int itr = 1;            //Need to create a counter variable. 
+           
             int32_t finalVal = 0;   //Variable for final integer.
 
             //While loop to iterate over the given number int by int
             while(num){
-                printf("%d", (num %10));    		//Print out the current digit
-				finalVal = finalVal * 10 + (num%10);		//Create the new number
-                num /= 10;  						//Adjust num accordingly
-				itr ++; 							//Increment itr by 1
+				int32_t tmp = num % 10;		//Get each individual digit
+				finalVal = finalVal * 10 + (num%10);	//Create the new number digit by digit
+                num /= 10;  							//Adjust num accordingly
             }
 			printf("%d\n", finalVal);
             return 0;                       //Will eventually return the final num
         }
 };
+
+/*
+ * Creating this main for testing
+ * Need to create an object and run some tests w reverseInt()
+ */
 int main(){
 
-    ReverseString obj;
+    ReverseInt obj;			//Creating an instance of Reverse
 
-    obj.reverseInt(1234);
-    return 0; 
+    obj.reverseInt(1234);	//Calling the func with the number 1234
+    return 0; 				//Needed for cpp
 }
